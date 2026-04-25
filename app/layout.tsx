@@ -4,6 +4,7 @@ import "./globals.css";
 
 //components
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrainsMono",
@@ -22,14 +23,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${jetbrainsMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
-        <Header/>
-        {children}
-        </body>
+    <html lang="en" className={`${jetbrainsMono.variable} h-full antialiased`}>
+      <body className="min-h-screen bg-[var(--color-primary)] text-white">
+        <div className="min-h-screen flex flex-col">
+          <Header />
+          <main className="flex-1 pt-28 mb-20">{children}</main> 
+          <Footer />
+        </div>
+      </body>
     </html>
   );
 }
