@@ -14,7 +14,7 @@ const Photo = () => {
         }}
       />
 
-      <div className="relative z-10 shrink-0 w-[220px] h-[220px] xl:w-[300px] xl:h-[300px] 
+      <div className="relative z-10 shrink-0 w-[220px] h-[220px] xl:w-[280px] xl:h-[280px] 
       rounded-full overflow-hidden border-4 border-[var(--color-accent)]">
         <Image
           src="/ranju.png"
