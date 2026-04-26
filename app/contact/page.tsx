@@ -1,54 +1,22 @@
 "use client";
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { FaEnvelope, FaMapMarkedAlt } from "react-icons/fa";
-
+import { Mail, MapPin } from "lucide-react";
+import Form from "@/components/Form";
 const info = [
   {
-    icon: <FaEnvelope />,
+    icon: <Mail />,
     title: "Email",
     description: "ranjustha8844@gmail.com",
   },
   {
-    icon: <FaMapMarkedAlt />,
+    icon: <MapPin />,
     title: "Location",
     description: "Kalimati, KTM",
   },
 ];
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { id, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [id]: value,
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    console.log(formData); // later send to API
-
-    // reset form
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
-  };
-
+ 
   return (
     <section className="py-24">
       <div className="mx-auto max-w-6xl px-6 xl:px-0">
@@ -105,64 +73,7 @@ const Contact = () => {
 
           {/* RIGHT SIDE */}
           <div className="flex-1">
-            <form
-              onSubmit={handleSubmit}
-              className="flex flex-col gap-6 rounded-xl bg-[#27272c] p-6 sm:p-10"
-            >
-              <div className="grid gap-4">
-                
-                {/* name */}
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="name" className="text-sm text-white/70">
-                    Your Name
-                  </label>
-                  <Input
-                    id="name"
-                    type="text"
-                    placeholder="Your name"
-                    value={formData.name}
-                    onChange={handleChange}
-                  />
-                </div>
-
-                {/* email */}
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="email" className="text-sm text-white/70">
-                    Email Address
-                  </label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="your.email@example.com"
-                    value={formData.email}
-                    onChange={handleChange}
-                  />
-                </div>
-
-                {/* message */}
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="message" className="text-sm text-white/70">
-                    Message
-                  </label>
-                  <Textarea
-                    id="message"
-                    placeholder="How can I help you?"
-                    rows={2}
-                    value={formData.message}
-                    onChange={handleChange}
-                  />
-                </div>
-              </div>
-
-              {/* button */}
-              <Button
-                type="submit"
-                size="lg"
-                className="bg-[var(--color-accent)] text-[var(--color-primary)] transition-all duration-300 hover:bg-[var(--color-accent-hover)]"
-              >
-                Send Message
-              </Button>
-            </form>
+            <Form/>
           </div>
 
         </div>
