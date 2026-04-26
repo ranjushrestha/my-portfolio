@@ -33,7 +33,10 @@
     line-height: 1.1;
     font-weight: 600;
   }
-
+::selection {
+  background-color: var(--color-accent);
+  color: white;
+}
 
 
   @media (min-width: 1280px) {

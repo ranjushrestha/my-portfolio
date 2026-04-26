@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-[var(--color-primary)] text-white">
         <div className="min-h-screen flex flex-col">
           <Header />
-          <main className="flex-1 pt-28 mb-20">{children}</main> 
+          <main className="flex-1 pt-28 mb-20">{children}</main>
           <Footer />
         </div>
       </body>
