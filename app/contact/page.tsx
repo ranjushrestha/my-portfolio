@@ -2,6 +2,8 @@
 
 import { Mail, MapPin } from "lucide-react";
 import Form from "@/components/Form";
+import { motion } from "framer-motion";
+
 const info = [
   {
     icon: <Mail />,
@@ -16,12 +18,17 @@ const info = [
 ];
 
 const Contact = () => {
- 
   return (
     <section className="py-24">
       <div className="mx-auto max-w-6xl px-6 xl:px-0">
         {/* heading */}
-        <div className="mb-20 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-20 text-center"
+        >
           <h2 className="text-4xl font-semibold text-[var(--color-accent)]">
             Get in Touch
           </h2>
@@ -29,13 +36,18 @@ const Contact = () => {
           <p className="mx-auto mt-4 max-w-2xl text-white/60">
             Have a question or want to work together? I'd love to hear from you.
           </p>
-        </div>
+        </motion.div>
 
         {/* content */}
         <div className="flex flex-col gap-12 lg:flex-row">
-          
           {/* LEFT SIDE */}
-          <div className="flex-1 space-y-6">
+          <motion.div
+            initial={{ opacity: 0, x: -80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7 }}
+            className="flex-1 space-y-6"
+          >
             <h3 className="text-2xl font-semibold">Let’s Connect</h3>
 
             <p className="max-w-md text-white/60">
@@ -62,20 +74,22 @@ const Contact = () => {
                     <p className="text-sm font-medium text-white">
                       {item.title}
                     </p>
-                    <p className="text-sm text-white/60">
-                      {item.description}
-                    </p>
+                    <p className="text-sm text-white/60">{item.description}</p>
                   </div>
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* RIGHT SIDE */}
-          <div className="flex-1">
-            <Form/>
-          </div>
-
+          <motion.div 
+          initial={{ opacity: 0, x: 80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7 }}
+          className="flex-1">
+            <Form />
+          </motion.div>
         </div>
       </div>
     </section>
