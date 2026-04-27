@@ -7,13 +7,13 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <section className="py-12 lg:py-20">
+    <section className="py-12 lg:py-20 ">
       <div className="max-w-6xl mx-auto px-6 xl:px-0">
         <div className="flex flex-col xl:flex-row items-center gap-10 xl:gap-16 mb-14 lg:mb-20">
           <motion.div
             className="shrink-0"
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
@@ -22,8 +22,8 @@ const About = () => {
 
           <motion.div
             className="text-center xl:text-left"
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >

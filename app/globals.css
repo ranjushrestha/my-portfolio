@@ -11,10 +11,11 @@
 
 /* ---------- BASE ---------- */
 @layer base {
-  body {
+  body,html {
     font-family: var(--font-jetbrainsMono), monospace;
     background-color: var(--color-primary);
     color: white;
+    overflow-x: hidden;
   }
 
   h1 {

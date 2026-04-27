@@ -35,9 +35,9 @@ const MobileNav = () => {
 
   return (
     <Sheet >
-      <SheetTrigger className="flex justify-center items-center">
-        <CiMenuFries className="text-[32px] text-[var(--color-accent)]" />
-      </SheetTrigger>
+  <SheetTrigger className="flex h-10 w-10 shrink-0 items-center justify-center focus:outline-none">
+  <CiMenuFries className="text-[32px] text-[var(--color-accent)]" />
+</SheetTrigger>
       <SheetContent className="bg-[var(--color-primary)] text-white">
         <SheetTitle className="sr-only">Mobile navigation</SheetTitle>
 

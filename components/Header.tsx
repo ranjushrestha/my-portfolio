@@ -5,24 +5,23 @@ import MobileNav from "./MobileNav";
 
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 z-50 w-full py-6 border-b border-white/10 bg-[var(--color-primary)]/60 backdrop-blur-2xl">
-      {" "}
-      <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
-        <div>
+    <header className="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-[var(--color-primary)]/60 backdrop-blur-2xl">
+      <div className="max-w-6xl mx-auto px-6 xl:px-0 h-20 flex items-center justify-between">
+        <div className="shrink-0">
           <Link href="/" className="block">
-            <h1 className="text-xl font-bold">Ranju Shrestha</h1>
+            <h1 className="text-xl font-bold leading-none">Ranju Shrestha</h1>
           </Link>
-          <p className="text-sm text-gray-400">Frontend Developer</p>
+          <p className="mt-1 text-sm leading-none text-gray-400">
+            Frontend Developer
+          </p>
         </div>
 
-        <div>
-          {/* desktop navbar */}
+        <div className="flex h-10 w-10 lg:w-auto items-center justify-end shrink-0">
           <div className="hidden lg:flex">
             <Nav />
           </div>
 
-          {/* mobile navbar */}
-          <div className="lg:hidden">
+          <div className="flex lg:hidden">
             <MobileNav />
           </div>
         </div>
