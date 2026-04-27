@@ -140,7 +140,7 @@ const Projects = () => {
                     src={project.image}
                     fill
                     alt={project.title}
-                    className="object-cover object-[10%_10%]  hover:scale-105 transition duration-500"
+                    className="object-cover object-[10%_40%]  hover:scale-105 transition duration-500"
                   />
                 </motion.div>
               </div>

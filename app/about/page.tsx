@@ -8,7 +8,7 @@ const About = () => {
   return (
     <section >
       <div className="max-w-6xl mx-auto px-6 xl:px-0">
-        <div className="flex flex-col xl:flex-row items-center gap-12 xl:gap-16 mb-30">
+        <div className="flex flex-col xl:flex-row items-center gap-12 xl:gap-16 mb-20">
           {/* Photo */}
           <motion.div
             className="shrink-0"
