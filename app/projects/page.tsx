@@ -20,64 +20,66 @@ const Projects = () => {
   ];
 
   return (
-    <section className="py-18">
+    <section className="py-12 lg:py-18">
       <div className="max-w-6xl mx-auto px-6 xl:px-0">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="text-center mb-12 lg:mb-20"
         >
-          <h2 className="text-4xl font-semibold">Projects</h2>
-          <p className="mt-4 text-white/60 max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-semibold">Projects</h2>
+
+          <p className="mt-3 text-white/60 max-w-xl mx-auto text-sm sm:text-base">
             A collection of{" "}
             <span className="text-[var(--color-accent)]">frontend work</span>{" "}
             showcasing clean UI and performance.
           </p>
         </motion.div>
 
-        <div className="flex flex-col gap-28">
+        <div className="flex flex-col gap-16 lg:gap-28">
           {projects.map((project, index) => {
             const isEven = index % 2 === 0;
 
             return (
               <div
                 key={project.num}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center ${
                   !isEven ? "lg:[&>*:first-child]:order-2" : ""
                 }`}
               >
+                {/* Text from left */}
                 <motion.div
-                  initial={{ opacity: 0, x: isEven ? -80 : 80 }}
+                  initial={{ opacity: 0, x: -40 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.7 }}
+                  viewport={{ once: true, amount: 0.25 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
                 >
-                  <div className="flex items-center gap-4 mb-6">
-                    <span className="text-sm text-white/40">
+                  <div className="flex items-center gap-4 mb-4 lg:mb-6">
+                    <span className="text-xs sm:text-sm text-white/40">
                       — {project.num}
                     </span>
                     <div className="h-px flex-1 bg-white/10" />
                   </div>
 
-                  <h3 className="text-3xl xl:text-5xl font-semibold">
+                  <h3 className="text-2xl sm:text-3xl xl:text-5xl font-semibold">
                     {project.category}
                   </h3>
 
-                  <p className="mt-3 text-xs uppercase tracking-widest text-[var(--color-accent)]">
+                  <p className="mt-2 sm:mt-3 text-[10px] sm:text-xs uppercase tracking-widest text-[var(--color-accent)]">
                     {project.title}
                   </p>
 
-                  <p className="mt-6 text-white/60 max-w-md">
+                  <p className="mt-4 lg:mt-6 text-white/60 max-w-md text-sm sm:text-base">
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-2 mt-6">
+                  <div className="flex flex-wrap gap-2 mt-4 lg:mt-6">
                     {project.stack.map((tech, i) => (
                       <span
                         key={i}
-                        className="text-xs border border-white/20 rounded-full px-3 py-1 text-white/60"
+                        className="text-[10px] sm:text-xs border border-white/20 rounded-full px-3 py-1 text-white/60"
                       >
                         {tech}
                       </span>
@@ -88,7 +90,7 @@ const Projects = () => {
                     <Link
                       href={project.live}
                       target="_blank"
-                      className="inline-flex items-center gap-2 mt-6 text-sm group hover:text-[var(--color-accent)]"
+                      className="inline-flex items-center gap-2 mt-5 lg:mt-6 text-sm group hover:text-[var(--color-accent)]"
                     >
                       View project
                       <BsArrowUpRight className="group-hover:translate-x-1 group-hover:-translate-y-1 transition" />
@@ -96,12 +98,13 @@ const Projects = () => {
                   )}
                 </motion.div>
 
+                {/* Image from right */}
                 <motion.div
-                  initial={{ opacity: 0, x: isEven ? 80 : -80 }}
+                  initial={{ opacity: 0, x: 40 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.7 }}
-                  className="relative w-full h-[260px] xl:h-[320px] rounded-lg overflow-hidden border border-white/10"
+                  viewport={{ once: true, amount: 0.25 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="relative w-full h-[220px] sm:h-[250px] xl:h-[320px] rounded-lg overflow-hidden border border-white/10"
                 >
                   <Image
                     src={project.image}
