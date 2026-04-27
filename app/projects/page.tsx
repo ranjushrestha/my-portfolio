@@ -17,32 +17,11 @@ const Projects = () => {
       image: "/project1.png",
       live: "",
     },
-    {
-      num: "02",
-      category: "Portfolio",
-      title: "Frontend Freelance",
-      description:
-        "Designed modern portfolio interfaces with smooth animations and clean UI.",
-      stack: ["Next.js", "Tailwind", "Framer Motion"],
-      image: "/portfolio.png",
-      live: "https://rajushrestha.vercel.app/",
-    },
-    {
-      num: "03",
-      category: "Dashboard",
-      title: "Student Fee System",
-      description:
-        "Dashboard for managing student fees with charts and admin controls.",
-      stack: ["React", "Chart.js"],
-      image: "/project3.png",
-      live: "",
-    },
   ];
 
   return (
     <section className="py-18">
       <div className="max-w-6xl mx-auto px-6 xl:px-0">
-
         {/* HEADING ANIMATION (comes from bottom) */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -54,9 +33,7 @@ const Projects = () => {
           <h2 className="text-4xl font-semibold">Projects</h2>
           <p className="mt-4 text-white/60 max-w-2xl mx-auto">
             A collection of{" "}
-            <span className="text-[var(--color-accent)]">
-              frontend work
-            </span>{" "}
+            <span className="text-[var(--color-accent)]">frontend work</span>{" "}
             showcasing clean UI and performance.
           </p>
         </motion.div>
@@ -139,8 +116,9 @@ const Projects = () => {
                   <Image
                     src={project.image}
                     fill
+                    sizes="(min-width: 1024px) 50vw, 100vw"
                     alt={project.title}
-                    className="object-cover object-[10%_40%]  hover:scale-105 transition duration-500"
+                    className="object-cover object-[10%_40%] hover:scale-105 transition duration-500"
                   />
                 </motion.div>
               </div>

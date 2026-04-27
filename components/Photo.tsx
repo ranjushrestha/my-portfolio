@@ -14,13 +14,16 @@ const Photo = () => {
         }}
       />
 
-      <div className="relative z-10 shrink-0 w-[220px] h-[220px] xl:w-[280px] xl:h-[280px] 
-      rounded-full overflow-hidden border-4 border-[var(--color-accent)]">
+      <div
+        className="relative z-10 shrink-0 w-[220px] h-[220px] xl:w-[280px] xl:h-[280px] 
+      rounded-full overflow-hidden border-4 border-[var(--color-accent)]"
+      >
         <Image
-          src="/ranju.png"
+          src="/ranju1.png"
           fill
+          sizes="(min-width: 1280px) 280px, 220px"
           alt="profile picture"
-          className="object-cover  object-[60%_40%]"
+          className="object-cover object-[60%_40%]"
           priority
         />
       </div>
