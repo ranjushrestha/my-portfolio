@@ -6,7 +6,7 @@ import Image from "next/image";
 const Photo = () => {
   return (
     <div className="relative flex items-center justify-center w-full min-h-[260px] xl:min-h-[380px]">
-      <motion.div
+      <div
         className="absolute z-0 w-[280px] h-[280px] xl:w-[380px] xl:h-[380px] 
         rounded-full blur-3xl opacity-60"
         style={{

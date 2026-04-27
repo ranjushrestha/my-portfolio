@@ -23,7 +23,7 @@ export default function Home() {
             </span>
 
             <h1 className="mt-4 leading-[1.1] font-semibold">
-              Hello I'm <br />
+              Hi, I'm <br />
               <span className="text-[var(--color-accent)]">
                 Ranju Shrestha
               </span>
