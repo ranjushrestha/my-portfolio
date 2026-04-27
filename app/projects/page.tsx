@@ -8,21 +8,20 @@ import { motion } from "framer-motion";
 const Projects = () => {
   const projects = [
     {
-      num: "01",
-      category: "UI Library",
-      title: "Amnil Technology",
+      num: "02",
+      category: "Portfolio",
+      title: "Frontend Freelance",
       description:
-        "Built a reusable UI system with modern components, responsive layouts, and scalable architecture.",
-      stack: ["React", "Tailwind"],
-      image: "/project1.png",
-      live: "",
+        "Designed modern portfolio interfaces with smooth animations and clean UI.",
+      stack: ["Tailwind", "React"],
+      image: "/portfolio.png",
+      live: "https://rajushrestha.vercel.app/",
     },
   ];
 
   return (
     <section className="py-18">
       <div className="max-w-6xl mx-auto px-6 xl:px-0">
-        {/* HEADING ANIMATION (comes from bottom) */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -38,7 +37,6 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        {/* PROJECTS */}
         <div className="flex flex-col gap-28">
           {projects.map((project, index) => {
             const isEven = index % 2 === 0;
@@ -50,12 +48,8 @@ const Projects = () => {
                   !isEven ? "lg:[&>*:first-child]:order-2" : ""
                 }`}
               >
-                {/* TEXT (from left or right) */}
                 <motion.div
-                  initial={{
-                    opacity: 0,
-                    x: isEven ? -80 : 80,
-                  }}
+                  initial={{ opacity: 0, x: isEven ? -80 : 80 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 0.7 }}
@@ -102,12 +96,8 @@ const Projects = () => {
                   )}
                 </motion.div>
 
-                {/* IMAGE (opposite direction) */}
                 <motion.div
-                  initial={{
-                    opacity: 0,
-                    x: isEven ? 80 : -80,
-                  }}
+                  initial={{ opacity: 0, x: isEven ? 80 : -80 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 0.7 }}
