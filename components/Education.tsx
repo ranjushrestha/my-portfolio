@@ -23,7 +23,6 @@ const Education = () => {
 
   return (
     <motion.section
-      
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
@@ -43,9 +42,6 @@ const Education = () => {
           {education.map((edu, idx) => (
             <div key={idx} className="flex gap-8">
               {/* Date */}
-              <div className="w-[120px] shrink-0">
-                <p className="text-sm text-white/50">{edu.date}</p>
-              </div>
 
               {/* Content */}
               <div>
